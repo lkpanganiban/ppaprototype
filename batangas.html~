@@ -68,6 +68,25 @@ var roads = L.geoJson(roadsdata, {
 
 
 
+//get Batangas boundary data from ppa api
+var boundarydata; 
+$.ajax({
+  url: 'http://geospatialapi-lkpanganiban.rhcloud.com/ppaapi/batangasboundary/',
+  dataType: 'json',
+  async: false,
+  success: function(data) {
+	boundarydata = data;
+  }
+});
+
+//add base ports data to the map with popup information
+var boundary = L.geoJson(boundarydata, {
+	onEachFeature: function(feature, layer){
+		layer.bindPopup(feature.properties.name);
+	}
+}).addTo(map);
+
+
 
 </script>
 </html>
