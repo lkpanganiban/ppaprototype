@@ -8,6 +8,10 @@
 <script src='lib/leaflet/leaflet.js'></script>
 <script src='lib/jquery-1.11.3.min.js'></script>
 <script src='lib/bootstrap/js/bootstrap.min.js'></script>
+
+<!--Leaflet Plugins-->
+<link rel='stylesheet' href='lib/leaflet-measure/dist/leaflet-measure.css' />
+<script src='lib/leaflet-measure/dist/leaflet-measure.js'></script>
 <style>
  #map { height: 500px; }
 </style>
@@ -20,11 +24,15 @@
 
 <script>
 var map = L.map('map').setView([14.121, 121.5482], 5);
+
+//add osm layer to the map
 L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 14,
     minZoom: 3
 }).addTo(map);
 
+//add measure control plugin
+var measurecontrol = L.control.measure().addTo(map); 
 
 //get base ports data from ppa api
 var baseportdata; 
@@ -40,12 +48,9 @@ $.ajax({
 //add base ports data to the map with popup information
 var basepoint = L.geoJson(baseportdata, {
 	onEachFeature: function(feature, layer){
-		layer.bindPopup(feature.properties.name + "<br>Latitude: " + feature.geometry.coordinates[0] + "<br>Longitude:" + feature.geometry.coordinates[1]);
+		layer.bindPopup(feature.properties.name + "<br>Latitude: " + feature.geometry.coordinates[0].toFixed(5) + "<br>Longitude:" + feature.geometry.coordinates[1].toFixed(5));
 	}
-
-
 }).addTo(map);
-
 
 </script>
 </html>
