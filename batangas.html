@@ -88,6 +88,26 @@ var boundary = L.geoJson(boundarydata, {
 }).addTo(map);
 
 
+//get Batangas coastline data from ppa api
+var coastlinedata; 
+$.ajax({
+  url: 'http://geospatialapi-lkpanganiban.rhcloud.com/ppaapi/batangascoastline/',
+  dataType: 'json',
+  async: false,
+  success: function(data) {
+	coastlinedata = data;
+  }
+});
+
+//add boundary data to the map with popup information
+//change styling of phase 1 and phase 2 of batangas boundary 
+var coastline = L.geoJson(coastlinedata, {
+	onEachFeature: function(feature, layer){
+		layer.bindPopup(feature.properties.name);
+	}
+}).addTo(map);
+
+
 
 </script>
 </html>
