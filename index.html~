@@ -4,6 +4,7 @@
 <title>PPA Web App</title>
 <link rel='stylesheet' href='lib/leaflet/leaflet.css' />
 <link rel='stylesheet' href='lib/bootstrap/css/bootstrap.css' />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
 
 <script src='lib/leaflet/leaflet.js'></script>
 <script src='lib/jquery-1.11.3.min.js'></script>
@@ -61,7 +62,7 @@ $.ajax({
 //add base ports data to the map with popup information
 var basepoint = L.geoJson(baseportdata, {
 	onEachFeature: function(feature, layer){
-		layer.bindPopup(feature.properties.name + "<br>Latitude: " + feature.geometry.coordinates[0].toFixed(5) + "<br>Longitude:" + feature.geometry.coordinates[1].toFixed(5));
+		layer.bindPopup(feature.properties.name + "<br>Latitude: " + feature.geometry.coordinates[0].toFixed(5) + "<br>Longitude:" + feature.geometry.coordinates[1].toFixed(5) + '<br><a href="http://localhost:8000/'+feature.properties.name.toLowerCase()+'.html">Go to this Port</a>');
 	}
 }).addTo(map);
 
