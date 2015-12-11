@@ -12,6 +12,9 @@
 <!--Leaflet Plugins-->
 <link rel='stylesheet' href='lib/leaflet-measure/dist/leaflet-measure.css' />
 <script src='lib/leaflet-measure/dist/leaflet-measure.js'></script>
+
+<link rel='stylesheet' href='lib/leaflet-zoombox/L.Control.ZoomBox.css' />
+<script src='lib/leaflet-zoombox/L.Control.ZoomBox.min.js'></script>
 <style>
  #map { height: 500px; }
 </style>
@@ -33,6 +36,16 @@ L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 //add measure control plugin
 var measurecontrol = L.control.measure().addTo(map); 
+
+//add zoombox control plugin
+var control = L.control.zoomBox({
+    modal: true,  // If false (default), it deactivates after each use.  
+                  // If true, zoomBox control stays active until you click on the control to deactivate.
+    // position: "topleft",                  
+    // className: "customClass"  // Class to use to provide icon instead of Font Awesome
+});
+map.addControl(control);
+
 
 //get base ports data from ppa api
 var baseportdata; 
