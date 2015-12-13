@@ -23,11 +23,25 @@
 </head>
 
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Philippine Ports Authority Web App</a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
 <div id='map'></div>
 </body>
 
 <script>
-var map = L.map('map').setView([13.767811236033613, 121.0456834777538], 16);
+var map = L.map('map').setView([13.758811236033613, 121.0456834777538], 16);
 
 //add osm layer to the map
 L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -123,7 +137,7 @@ $.ajax({
 //change styling of phase 1 and phase 2 of batangas boundary 
 var facilities = L.geoJson(facilitiesdata, {
 	onEachFeature: function(feature, layer){
-		layer.bindPopup(feature.properties.name);
+		layer.bindPopup(feature.properties.name_type);
 	}
 }).addTo(map);
 
