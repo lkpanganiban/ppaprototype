@@ -17,7 +17,14 @@
 <link rel='stylesheet' href='lib/leaflet-zoombox/L.Control.ZoomBox.css' />
 <script src='lib/leaflet-zoombox/L.Control.ZoomBox.min.js'></script>
 <style>
- #map { height: 500px; }
+html,body, #map{
+    height:100%;
+    width: 100%;
+overflow: hidden;
+}
+.navbar {
+    margin-bottom: 0;
+}
 </style>
 
 </head>
@@ -86,7 +93,11 @@ var control = L.control.zoomBox({
 });
 map.addControl(control);
 
+//add control scale
+L.control.scale().addTo(map);
 
+
+//Load PPA sample data from geospatialapi
 //get base ports data from ppa api
 var baseportdata; 
 $.ajax({

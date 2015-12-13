@@ -17,8 +17,16 @@
 <link rel='stylesheet' href='lib/leaflet-zoombox/L.Control.ZoomBox.css' />
 <script src='lib/leaflet-zoombox/L.Control.ZoomBox.min.js'></script>
 <style>
- #map { height: 500px; }
+html,body, #map{
+    height:100%;
+    width: 100%;
+overflow: hidden;
+}
+.navbar {
+    margin-bottom: 0;
+}
 </style>
+
 
 </head>
 
@@ -41,7 +49,7 @@
 </body>
 
 <script>
-var map = L.map('map').setView([13.758811236033613, 121.0456834777538], 16);
+var map = L.map('map').setView([13.758811236033613, 121.0456834777538], 14);
 
 //add osm layer to the map
 var OSMlayer = L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -83,6 +91,9 @@ var control = L.control.zoomBox({
     // className: "customClass"  // Class to use to provide icon instead of Font Awesome
 });
 map.addControl(control);
+
+//add control scale
+L.control.scale().addTo(map);
 
 
 //get Batangas roads data from ppa api
