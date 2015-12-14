@@ -16,6 +16,9 @@
 
 <link rel='stylesheet' href='lib/leaflet-zoombox/L.Control.ZoomBox.css' />
 <script src='lib/leaflet-zoombox/L.Control.ZoomBox.min.js'></script>
+
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
+
 <style>
 #map{
     height:92%;
@@ -33,7 +36,6 @@
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -43,17 +45,24 @@
       </button>
       <a class="navbar-brand" href="#">Philippine Ports Authority Web App</a>
     </div>
-  </div><!-- /.container-fluid -->
+  </div>
 </nav>
+
+<!--Map Proper-->
 <div id='map'></div>
+<button id='snap' class='ui-button'>Take a snapshot</button>
+<div id='snapshot'></div>
+
+
 </body>
 
 <script>
+var L_PREFER_CANVAS = true;
 var map = L.map('map').setView([13.758811236033613, 121.0456834777538], 14);
 
 //add osm layer to the map
 var OSMlayer = L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 14,
+    maxZoom: 17,
     minZoom: 3
 }).addTo(map);
 
@@ -185,6 +194,22 @@ var layerMaps = {
 };
 
 L.control.layers(null, layerMaps).addTo(map);
+
+
+//leaflet image implementation
+document.getElementById('snap').addEventListener('click', function() {
+    leafletImage(map, doImage);
+});
+var snapshot = document.getElementById('snapshot');
+function doImage(err, canvas){
+    var img = document.createElement('img');
+    var dimensions = map.getSize();
+    img.width = dimensions.x;
+    img.height = dimensions.y;
+    img.src = canvas.toDataURL();
+    snapshot.innerHTML='';
+    snapshot.appendChild(img);
+}; 
 
 
 </script>
