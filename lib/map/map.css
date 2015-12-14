@@ -1,20 +1,34 @@
-.FExIcon{
-	font-size:1.5em;
-	padding-top: 3px;
+.FExIcon {
+    font-size: 1.5em;
+    padding-top: 3px;
 }
-.leaflet-control-zoomslider.leaflet-bar.leaflet-control{
-	margin-left:32px;
+
+.leaflet-control-zoomslider.leaflet-bar.leaflet-control {
+    margin-left: 32px;
 }
-.leaflet-control-zoom.leaflet-bar.leaflet-control{
-	margin-left:22px;
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control {
+    margin-left: 22px;
 }
-.leaflet-zoom-box-control.leaflet-bar.leaflet-control{
-	margin-left: 22px;
+
+.leaflet-zoom-box-control.leaflet-bar.leaflet-control {
+    margin-left: 22px;
 }
-.leaflet-bar.easy-button-container.leaflet-control{
-	margin-left: 22px;
+
+.leaflet-bar.easy-button-container.leaflet-control {
+    margin-left: 22px;
 }
-.leaflet-control-zoomslider-body{
-	border-color: #130229;
-	border-width: 0px 3px;
+
+.leaflet-control-zoomslider-body {
+    border-color: #130229;
+    border-width: 0px 3px;
+}
+
+.history-control.leaflet-bar.leaflet-control.vertical{
+    margin-left: 22px;
+}
+
+.history-control.leaflet-bar.leaflet-control.vertical i {
+    font-size: 1.5em;
+    padding-top: 3px;
 }
