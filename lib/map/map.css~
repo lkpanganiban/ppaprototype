@@ -1,0 +1,73 @@
+html,
+body,
+#container
+/*, and all other map parent selectors*/
+
+{
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+#map {
+    height: 96%;
+    overflow: hidden;
+}
+
+.FExIcon{
+    font-size: 1.5em;
+    padding-top: 3px;
+}
+
+.leaflet-control-zoomslider.leaflet-bar.leaflet-control {
+    margin-left: 32px;
+}
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control {
+    margin-left: 22px;
+}
+
+.leaflet-zoom-box-control.leaflet-bar.leaflet-control {
+    margin-left: 22px;
+}
+
+.leaflet-bar.easy-button-container.leaflet-control {
+    margin-left: 22px;
+}
+
+.leaflet-control-zoomslider-body {
+    border-color: #130229;
+    border-width: 0px 3px;
+}
+
+.history-control.leaflet-bar.leaflet-control.vertical {
+    margin-left: 22px;
+}
+
+.history-control.leaflet-bar.leaflet-control.vertical i {
+    font-size: 1.5em;
+    padding-top: 3px;
+}
+
+.leaflet-control-scale.leaflet-control {
+    position: absolute;
+    bottom: 2em;
+}
+
+#sidebar {
+    height: 75%;
+    margin-top: 3%;
+}
+
+#sidebar i {
+    font-size: 1.5em;
+    padding-top: 11px;
+}
+
+.sidebar-tabs.list-inline ul{
+    height:100%;
+}
+
+.sidebar-tabs > li, .sidebar-tabs > ul > li, .sidebar-header{
+    height:48px;
+}
