@@ -1,25 +1,20 @@
 <html>
 
 <head>
-    <title>PPA Web App 1</title>
+    <title>PPA Web App</title>
     <!--Styles-->
     <link rel='stylesheet' href='lib/leaflet/leaflet.css' />
     <link rel='stylesheet' href='lib/bootstrap/css/bootstrap.css' />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel='stylesheet' href='lib/leaflet-measure/dist/leaflet-measure.css' />
     <link rel='stylesheet' href='lib/leaflet-zoombox/L.Control.ZoomBox.css' />
     <link rel='stylesheet' href='lib/leaflet-zslider/L.Control.ZoomSlider.css' />
     <link rel='stylesheet' href='lib/leaflet-easybtn/easy-button.css' />
     <link rel='stylesheet' href='lib/leaflet-history/leaflet-history.css' />
+    <link rel='stylesheet' href='lib/leaflet-sidebar/leaflet-sidebar.css' />
     <link rel='stylesheet' href='lib/map/map.css' />
     <!-- End Styles-->
     <style>
-    #map {
-        height: 92%;
-        width: 100%;
-        overflow: hidden;
-    }
-    
     .navbar {
         margin-bottom: 0;
     }
@@ -40,13 +35,46 @@
             </div>
         </div>
     </nav>
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist" class="list--inline">
+                <!--  <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li> -->
+                <li><a href="#basemap" role="tab"><i class="fa fa-map"></i></a></li>
+                <li><a href="#layers" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#measure" role="tab"><i class="fa fa-calculator"></i></a></li>
+                <li><a href="#buffer" role="tab"><i class="fa fa-bullseye"></i></a></li>
+                <li><a href="#report" role="tab"><i class="fa fa-file-text"></i></a></li>
+            </ul>
+        </div>
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="basemap">
+                <h1 class="sidebar-header">Basemaps<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+                
+            </div>
+            <div class="sidebar-pane" id="layers">
+                <h1 class="sidebar-header">Layers<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+            </div>
+            <div class="sidebar-pane" id="measure">
+                <h1 class="sidebar-header">Measure<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+            </div>
+            <div class="sidebar-pane" id="buffer">
+                <h1 class="sidebar-header">Buffer<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+            </div>
+            <div class="sidebar-pane" id="report">
+                <h1 class="sidebar-header">Report<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+            </div>
+        </div>
+    </div>
     <!--Map Proper-->
-    <div id='map'></div>
+    <div id='map' class='sidebar-map'></div>
     <!-- <button id='snap' class='ui-button'>Take a snapshot</button>
 <div id='snapshot'></div> -->
 </body>
 <!--Scripts-->
-<script src='lib/leaflet/leaflet.js'></script>
+<!-- <script src='lib/leaflet/leaflet.js'></script> -->
+<script src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js'></script>
 <script src='lib/jquery-1.11.3.min.js'></script>
 <script src='lib/bootstrap/js/bootstrap.min.js'></script>
 <script src='lib/d3/d3.min.js'></script>
@@ -55,10 +83,9 @@
 <script src='lib/leaflet-zslider/L.Control.Zoomslider_ppa.js'></script>
 <script src='lib/leaflet-easybtn/easy-button.js'></script>
 <script src='lib/leaflet-history/leaflet-history.js'></script>
+<script src='lib/leaflet-sidebar/leaflet-sidebar.js'></script>
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
 <script src='lib/map/map.js'></script>
 <!--End Scripts-->
-
-
 
 </html>
