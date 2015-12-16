@@ -12,6 +12,7 @@ body,
 #map {
     height: 96%;
     overflow: hidden;
+    width:110%;
 }
 
 .FExIcon{
@@ -55,13 +56,13 @@ body,
 }
 
 #sidebar {
-    height: 25%;
-    margin-top: 3%;
+    height: 30%;
+    margin-top: 10.5%;
 }
 
 #sidebar i {
     font-size: 1.5em;
-    padding-top: 11px;
+    padding-top: 8px;
 }
 
 .sidebar-tabs.list-inline ul{
@@ -69,5 +70,9 @@ body,
 }
 
 .sidebar-tabs > li, .sidebar-tabs > ul > li, .sidebar-header{
-    height:48px;
+    height:40px;
+}
+
+.sidebar{
+	width:25%;
 }

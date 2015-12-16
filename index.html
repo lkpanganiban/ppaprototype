@@ -39,7 +39,6 @@
         <!-- Nav tabs -->
         <div class="sidebar-tabs">
             <ul role="tablist" class="list--inline">
-                <!--  <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li> -->
                 <li><a href="#basemap" role="tab"><i class="fa fa-map"></i></a></li>
                 <li><a href="#layers" role="tab"><i class="fa fa-bars"></i></a></li>
                 <li><a href="#measure" role="tab"><i class="fa fa-calculator"></i></a></li>
@@ -51,13 +50,41 @@
         <div class="sidebar-content">
             <div class="sidebar-pane" id="basemap">
                 <h1 class="sidebar-header">Basemaps<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
-                
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Openstreet Map</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">MapQuest Satellite</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">OpenTopo Map</label>
+                </div>
             </div>
             <div class="sidebar-pane" id="layers">
                 <h1 class="sidebar-header">Layers<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="">Port Roads</label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="">Port Boundaries</label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="">Port Coastline</label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="">Port Facilities</label>
+                </div>
             </div>
             <div class="sidebar-pane" id="measure">
                 <h1 class="sidebar-header">Measure<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+                <h5><strong>Measure Areas and Distances</strong></h5>
             </div>
             <div class="sidebar-pane" id="buffer">
                 <h1 class="sidebar-header">Buffer<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
