@@ -12,10 +12,10 @@ body,
 #map {
     height: 96%;
     overflow: hidden;
-    width:110%;
+    width: 110%;
 }
 
-.FExIcon{
+.FExIcon {
     font-size: 1.5em;
     padding-top: 3px;
 }
@@ -55,24 +55,42 @@ body,
     bottom: 2em;
 }
 
+.leaflet-control-coordinates.leaflet-control {
+    position: absolute;
+    bottom: 75%;
+    right: 350%;
+}
+
 #sidebar {
-    height: 30%;
+    height: 175px;
     margin-top: 10.5%;
 }
 
 #sidebar i {
-    font-size: 1.5em;
-    padding-top: 8px;
+    font-size: 25px;
+    padding-top: 5px;
 }
 
-.sidebar-tabs.list-inline ul{
-    height:100%;
+.sidebar-tabs.list-inline ul {
+    height: 100%;
 }
 
-.sidebar-tabs > li, .sidebar-tabs > ul > li, .sidebar-header{
-    height:40px;
+.sidebar-tabs > li,
+.sidebar-tabs > ul > li,
+.sidebar-header {
+    height: 35px;
 }
 
-.sidebar{
-	width:25%;
+.sidebar {
+    width: 250px;
+}
+
+#measure h5,
+#measure h6 {
+    width: 200px;
+}
+
+#measure i {
+    padding: 2px;
+    font-size: 16px;
 }
