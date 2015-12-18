@@ -54,7 +54,7 @@
                 <form id="basemapForm">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="basemaps" value="osm" autocomplete="off" checked="checked"/> Openstreet Map
+                            <input type="radio" name="basemaps" value="osm" autocomplete="off" checked="checked" /> Openstreet Map
                         </label>
                     </div>
                     <div class="radio">
@@ -64,29 +64,31 @@
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="basemaps" value="topo" autocomplete="off"/> OpenTopo Map
+                            <input type="radio" name="basemaps" value="topo" autocomplete="off" /> OpenTopo Map
                         </label>
                     </div>
                 </form>
             </div>
             <div class="sidebar-pane" id="layers">
                 <h1 class="sidebar-header">Layers<div class="sidebar-close"></div></h1>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Port Roads</label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Port Boundaries</label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Port Coastline</label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Port Facilities</label>
-                </div>
+                <form id="layerForm">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Roads</label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Boundaries</label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Coastline</label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Facilities</label>
+                    </div>
+                </form>
             </div>
             <div class="sidebar-pane" id="measure">
                 <h1 class="sidebar-header">Measure<div class="sidebar-close"></div></h1>
@@ -103,8 +105,6 @@
     </div>
     <!--Map Proper-->
     <div id='map' class='sidebar-map'></div>
-    <!-- <button id='snap' class='ui-button'>Take a snapshot</button>
-<div id='snapshot'></div> -->
 </body>
 <!--Scripts-->
 <!-- <script src='lib/leaflet/leaflet.js'></script> -->
