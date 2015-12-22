@@ -404,5 +404,28 @@ function featurebuffer(){
     if (map.hasLayer(resultJson) == true){
         map.removeLayer(resultJson);
     }
-    resultJson = L.geoJson(result).addTo(map);
+    resultJson = L.geoJson(result).addTo(map).bringToBack();
+    var conflictlist = [] ;
+    var f1 = resultJson.features;
+    console.log(f1);
+ /* 
+    var f2 = facilities.features;    
+
+    for (var i = 0; i < f1.length; i++) {
+        var parcel1 = f1[i];
+
+        for (var j = 0; j <f2.length; j++) {
+
+            var parcel2 = f2[j];
+
+            console.log("Processing",i,j);
+                var conflict = turf.intersect(parcel1, parcel2);
+                if (conflict != null) {
+                    conflictlist.push(conflict);
+                }
+        }
+    }
+    console.log(conflictlist)
+*/
+
 }
