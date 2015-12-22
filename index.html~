@@ -5,20 +5,17 @@
     <!--Styles-->
     <link rel='stylesheet' href='lib/leaflet/leaflet.css' />
     <link rel='stylesheet' href='lib/bootstrap/css/bootstrap.css' />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel='stylesheet' href='lib/leaflet-measure/dist/leaflet-measure.css' />
     <link rel='stylesheet' href='lib/leaflet-zoombox/L.Control.ZoomBox.css' />
     <link rel='stylesheet' href='lib/leaflet-zslider/L.Control.ZoomSlider.css' />
     <link rel='stylesheet' href='lib/leaflet-easybtn/easy-button.css' />
+    <link rel='stylesheet' href='lib/leaflet-history/leaflet-history.css' />
+    <link rel='stylesheet' href='lib/leaflet-sidebar/leaflet-sidebar.css' />
+    <link rel='stylesheet' href='lib/leaflet-coords/Control.Coordinates.css' />
     <link rel='stylesheet' href='lib/map/map.css' />
     <!-- End Styles-->
     <style>
-    #map {
-        height: 92%;
-        width: 100%;
-        overflow: hidden;
-    }
-    
     .navbar {
         margin-bottom: 0;
     }
@@ -35,170 +32,98 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Philippine Ports Authority Web App</a>
+                <a class="navbar-brand" href="index.html">Philippine Ports Authority Web App</a>
             </div>
         </div>
     </nav>
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist" class="list--inline">
+                <li><a href="#basemap" role="tab"><i class="fa fa-map"></i></a></li>
+                <li><a href="#layers" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#measure" role="tab"><i class="fa fa-calculator"></i></a></li>
+                <li><a href="#buffer" role="tab"><i class="fa fa-bullseye"></i></a></li>
+                <li><a href="#report" role="tab"><i class="fa fa-file-text"></i></a></li>
+            </ul>
+        </div>
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="basemap">
+                <h1 class="sidebar-header">Basemaps<div class="sidebar-close"></div></h1>
+                <form id="basemapForm">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="basemaps" value="osm" autocomplete="off" checked="checked" /> Openstreet Map
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="basemaps" value="sat" autocomplete="off" /> MapQuest Satellite
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="basemaps" value="topo" autocomplete="off" /> OpenTopo Map
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="sidebar-pane" id="layers">
+                <h1 class="sidebar-header">Layers<div class="sidebar-close"></div></h1>
+                <form id="layerForm">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Roads</label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Boundaries</label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Coastline</label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" disabled>Port Facilities</label>
+                    </div>
+                </form>
+            </div>
+            <div class="sidebar-pane" id="measure">
+                <h1 class="sidebar-header">Measure<div class="sidebar-close"></div></h1>
+                <h5><strong>Measure Areas and Distances</strong></h5>
+                <h6><i class="fa fa-arrow-circle-left"></i><span>Create a New Measurement</span></h6>
+            </div>
+            <div class="sidebar-pane" id="buffer">
+                <h1 class="sidebar-header">Buffer<div class="sidebar-close"></div></h1>
+	    <h5><strong><span onclick="featurebuffer()">Execute Buffer</strong></h5>
+            </div>
+            <div class="sidebar-pane" id="report">
+                <h1 class="sidebar-header">Report<div class="sidebar-close"></div></h1>
+            </div>
+        </div>
+    </div>
     <!--Map Proper-->
-    <div id='map'></div>
-    <!-- <button id='snap' class='ui-button'>Take a snapshot</button>
-<div id='snapshot'></div> -->
+    <div id='map' class='sidebar-map'></div>
 </body>
-<script>
-// //leaflet image implementation
-// document.getElementById('snap').addEventListener('click', function() {
-//     leafletImage(map, doImage);
-// });
-// var snapshot = document.getElementById('snapshot');
-// function doImage(err, canvas){
-//     var img = document.createElement('img');
-//     var dimensions = map.getSize();
-//     img.width = dimensions.x;
-//     img.height = dimensions.y;
-//     img.src = canvas.toDataURL();
-//     snapshot.innerHTML='';
-//     snapshot.appendChild(img);
-// };
-</script>
 <!--Scripts-->
-<script src='lib/leaflet/leaflet.js'></script>
+<!-- <script src='lib/leaflet/leaflet.js'></script> -->
+<script src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js'></script>
 <script src='lib/jquery-1.11.3.min.js'></script>
 <script src='lib/bootstrap/js/bootstrap.min.js'></script>
+<script src='lib/d3/d3.min.js'></script>
 <script src='lib/leaflet-measure/dist/leaflet-measure.js'></script>
 <script src='lib/leaflet-zoombox/L.Control.ZoomBox.min.js'></script>
-<<<<<<< HEAD
 <script src='lib/leaflet-zslider/L.Control.Zoomslider_ppa.js'></script>
 <script src='lib/leaflet-easybtn/easy-button.js'></script>
-<script src='lib/d3/d3.min.js'></script>
+<script src='lib/leaflet-history/leaflet-history.js'></script>
+<script src='lib/leaflet-sidebar/leaflet-sidebar.js'></script>
+<script src='lib/leaflet-coords/NumberFormatter.js'></script>
+<script src='lib/leaflet-coords/Control.Coordinates.js'></script>
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
+<script src='lib/turf.min.js'></script>
 <script src='lib/map/map.js'></script>
 <!--End Scripts-->
 
-=======
-
-<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
-
-<style>
-#map{
-    height:92%;
-    width: 100%;
-overflow: hidden;
-}
-.navbar {
-    margin-bottom: 0;
-}
-</style>
-
-</head>
-
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Philippine Ports Authority Web App</a>
-    </div>
-  </div>
-</nav>
-
-<!--Map Proper-->
-<div id='map'></div>
-<button id='snap' class='ui-button'>Take a snapshot</button>
-<div id='snapshot'></div>
-
-
-</body>
-
-<script>
-var map = L.map('map').setView([14.121, 121.5482], 5);
-
-//add osm layer to the map
-var OSMlayer = L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 17,
-    minZoom: 3
-}).addTo(map);
-
-//add mapquest open satellite
-var MapQuestOpen_Aerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
-	type: 'sat',
-	ext: 'jpg',
-	attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
-	subdomains: '1234'
-});
-
-//add opentopo map
-var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-	maxZoom: 16,
-	attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-});
-
-//layer control
-var baseMaps = {
-    "Mapquest Aerial": MapQuestOpen_Aerial,
-    "Openstreet Map": OSMlayer,
-    "Open Topo Map": OpenTopoMap
-};
-
-L.control.layers(baseMaps).addTo(map);
-
-//add measure control plugin
-var measurecontrol = L.control.measure().addTo(map); 
-
-//add zoombox control plugin
-var control = L.control.zoomBox({
-    modal: true,  // If false (default), it deactivates after each use.  
-                  // If true, zoomBox control stays active until you click on the control to deactivate.
-    // position: "topleft",                  
-    // className: "customClass"  // Class to use to provide icon instead of Font Awesome
-});
-map.addControl(control);
-
-//add control scale
-L.control.scale().addTo(map);
-
-
-//load PPA sample data from geospatialapi
-//get base ports data from ppa api
-var baseportdata; 
-$.ajax({
-  url: 'http://geospatialapi-lkpanganiban.rhcloud.com/ppaapi/baseports/',
-  dataType: 'json',
-  async: false,
-  success: function(data) {
-	baseportdata = data;
-  }
-});
-
-//add base ports data to the map with popup information
-var basepoint = L.geoJson(baseportdata, {
-	onEachFeature: function(feature, layer){
-		layer.bindPopup(feature.properties.name + "<br>Latitude: " + feature.geometry.coordinates[0].toFixed(5) + "<br>Longitude:" + feature.geometry.coordinates[1].toFixed(5) + '<br><a href="'+feature.properties.name.toLowerCase()+'.html">Go to this Port</a>');
-	}
-}).addTo(map);
-
-
-
-//leaflet image implementation
-document.getElementById('snap').addEventListener('click', function() {
-    leafletImage(map, doImage);
-});
-var snapshot = document.getElementById('snapshot');
-function doImage(err, canvas){
-    var img = document.createElement('img');
-    var dimensions = map.getSize();
-    img.width = dimensions.x;
-    img.height = dimensions.y;
-    img.src = canvas.toDataURL();
-    snapshot.innerHTML='';
-    snapshot.appendChild(img);
-}; 
-
-
-</script>
->>>>>>> 17c206aca2e5d62748b29a3165996f619c21f989
 </html>

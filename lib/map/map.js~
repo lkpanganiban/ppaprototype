@@ -404,5 +404,5 @@ function featurebuffer(){
     if (map.hasLayer(resultJson) == true){
         map.removeLayer(resultJson);
     }
-    resultJson = L.geoJson(result).addTo(map).bringToBack();
+    resultJson = L.geoJson(result).addTo(map);
 }
