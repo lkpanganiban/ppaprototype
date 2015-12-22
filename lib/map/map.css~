@@ -1,73 +1,111 @@
-html,
-body,
-#container
-/*, and all other map parent selectors*/
+    html,
+    body,
+    #container
+    /*, and all other map parent selectors*/
+    
+    {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    #map {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .FExIcon {
+        font-size: 1.5em;
+        padding-top: 3px;
+    }
+    
+    .leaflet-control-zoomslider.leaflet-bar.leaflet-control {
+        margin-left: 32px;
+    }
+    
+    .leaflet-control-zoom.leaflet-bar.leaflet-control {
+        margin-left: 22px;
+    }
+    
+    .leaflet-zoom-box-control.leaflet-bar.leaflet-control {
+        margin-left: 22px;
+    }
+    
+    .leaflet-bar.easy-button-container.leaflet-control {
+        margin-left: 22px;
+    }
+    
+    .leaflet-control-zoomslider-body {
+        border-color: #130229;
+        border-width: 0px 3px;
+    }
+    
+    .history-control.leaflet-bar.leaflet-control.vertical {
+        margin-left: 22px;
+    }
+    
+    .history-control.leaflet-bar.leaflet-control.vertical i {
+        font-size: 1.5em;
+        padding-top: 3px;
+    }
+    
+    .leaflet-control-scale.leaflet-control {
+        position: fixed;
+        bottom: 0px;
+    }
+    
+    .leaflet-control-coordinates.leaflet-control {
+        position: fixed;
+        bottom: 10px;
+        right: 0px;
+    }
+    
+    .leaflet-control-attribution.leaflet-control {
+        position: fixed;
+        bottom: 0px;
+        right: 10px;
+    }
+    
+    #sidebar {
+        height: 175px;
+        margin-top: 10.5%;
+    }
+    
+    #sidebar i {
+        font-size: 25px;
+        padding-top: 5px;
+    }
+    
+    .sidebar-tabs.list-inline ul {
+        height: 100%;
+    }
+    
+    .sidebar-tabs > li,
+    .sidebar-tabs > ul > li,
+    .sidebar-header {
+        height: 35px;
+    }
+    
+    .sidebar {
+        width: 250px;
+    }
+    
+    #measure h5,
+    #measure h6 {
+        width: 200px;
+    }
+    
+    #measure h6 i {
+        padding: 2px;
+        font-size: 16px;
+    }
+    
+    .sidebar-close i {
+        font-size: 25px;
+        padding-top: 8px;
+    }
 
-{
-    height: 100%;
-    overflow: hidden;
-    width: 100%;
-}
-
-#map {
-    height: 96%;
-    overflow: hidden;
-}
-
-.FExIcon{
-    font-size: 1.5em;
-    padding-top: 3px;
-}
-
-.leaflet-control-zoomslider.leaflet-bar.leaflet-control {
-    margin-left: 32px;
-}
-
-.leaflet-control-zoom.leaflet-bar.leaflet-control {
-    margin-left: 22px;
-}
-
-.leaflet-zoom-box-control.leaflet-bar.leaflet-control {
-    margin-left: 22px;
-}
-
-.leaflet-bar.easy-button-container.leaflet-control {
-    margin-left: 22px;
-}
-
-.leaflet-control-zoomslider-body {
-    border-color: #130229;
-    border-width: 0px 3px;
-}
-
-.history-control.leaflet-bar.leaflet-control.vertical {
-    margin-left: 22px;
-}
-
-.history-control.leaflet-bar.leaflet-control.vertical i {
-    font-size: 1.5em;
-    padding-top: 3px;
-}
-
-.leaflet-control-scale.leaflet-control {
-    position: absolute;
-    bottom: 2em;
-}
-
-#sidebar {
-    height: 75%;
-    margin-top: 3%;
-}
-
-#sidebar i {
-    font-size: 1.5em;
-    padding-top: 11px;
-}
-
-.sidebar-tabs.list-inline ul{
-    height:100%;
-}
-
-.sidebar-tabs > li, .sidebar-tabs > ul > li, .sidebar-header{
-    height:48px;
+#bufferinfo{
+    width:55%;
 }
