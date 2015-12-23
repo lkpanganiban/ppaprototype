@@ -109,3 +109,8 @@
 #bufferinfo{
     width:50%;
 }
+
+/*Don't display the measure control button*/
+.leaflet-control-measure{
+  display:none;
+}

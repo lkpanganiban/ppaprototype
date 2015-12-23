@@ -416,8 +416,8 @@ var snapshot = document.getElementById('snapshot');
 function doImage(err, canvas){
     var img = document.createElement('img');
     var dimensions = map.getSize();
-    img.width = dimensions.x/4;
-    img.height = dimensions.y/4;
+    img.width = dimensions.x/3;
+    img.height = dimensions.y/3;
     img.src = canvas.toDataURL();
     snapshot.innerHTML='';
     snapshot.appendChild(img);
