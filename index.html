@@ -16,9 +16,6 @@
     <link rel='stylesheet' href='lib/map/map.css' />
     <!-- End Styles-->
     <style>
-    .navbar {
-        margin-bottom: 0;
-    }
     </style>
 </head>
 
@@ -26,13 +23,13 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <!--                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Philippine Ports Authority Web App</a>
+                </button> -->
+                <a class="navbar-brand" href="index.html"><img src="img/ppalogo.png"><span>PPA Ports Web Application</span></a>
             </div>
         </div>
     </nav>
@@ -93,45 +90,45 @@
             <div class="sidebar-pane" id="measure">
                 <h1 class="sidebar-header">Measure<div class="sidebar-close"></div></h1>
                 <h5><strong>Measure Areas and Distances</strong></h5>
-		<h6><i class="fa fa-arrow-circle-left"></i><span><a href="javascript:showMeasureControl();">Create a New Measurement</a></span></h6>
+                <!-- <h6><i class="fa fa-arrow-circle-left"></i><span><a href="javascript:showMeasureControl();">Create a New Measurement</a></span></h6> -->
+                <a href="javascript:showMeasureControl();"><button class="btn">Create a New Measurement</button></a>
             </div>
             <div class="sidebar-pane" id="buffer">
                 <h1 class="sidebar-header">Buffer<div class="sidebar-close"></div></h1> &nbsp;
-<div id='bufferinfo'>Click on any feature and wait for the popup to appear then click Execute Buffer</div>
- <h5> <a href="javascript:featurebuffer()"><strong>Execute Buffer</strong></a></h5>
+                <div id='bufferinfo'>Click on any feature and wait for the popup to appear then click <i>Execute Buffer</i></div>
+                <a href="javascript:featurebuffer();"><button class="btn"><strong>Execute Buffer</strong></button></a>
             </div>
             <div class="sidebar-pane" id="report">
                 <h1 class="sidebar-header">Report<div class="sidebar-close"></div></h1>
-			<!--<button id='snap' class='ui-button'>Take a snapshot</button> -->
-			<button id="snap" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Take Snapshot</button>
-			
+                <!--<button id='snap' class='ui-button'>Take a snapshot</button> -->
+                <button id="snap" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Take Snapshot</button>
             </div>
         </div>
     </div>
     <!--Map Proper-->
-    <div id='map' class='sidebar-map'></div>
-	<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-
-		<!-- Modal content-->
-		<div class="modal-content">
-		  <div class="modal-header">
-		    <button type="button" class="close" data-dismiss="modal">&times;</button>
-		    <h4 class="modal-title">Map Report</h4>
-		  </div>
-		  <div class="modal-body">
-			<div id='snapshot'></div>
-		  </div>
-		</div>
-
-	  </div>
-	</div>
+    <div id='map' class='sidebar-map custom-popup'></div>
+    <!-- Modal --><h6><i class="fa fa-arrow-circle-left"></i><span><a href="javascript:showMeasureControl();">Create a New Measurement</a></span></h6>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Map Report</h4>
+                </div>
+                <div class="modal-body">
+                    <div id='snapshot'></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <!--Scripts-->
 <!-- <script src='lib/leaflet/leaflet.js'></script> -->
-<script>L_PREFER_CANVAS = true;</script>
-<script src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js'></script>
+<script>
+L_PREFER_CANVAS = true;
+</script>
+<script src='lib/leaflet/leaflet_0_7_2.js'></script>
 <script src='lib/jquery-1.11.3.min.js'></script>
 <script src='lib/bootstrap/js/bootstrap.min.js'></script>
 <script src='lib/d3/d3.min.js'></script>
