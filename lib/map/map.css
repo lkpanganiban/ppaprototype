@@ -111,11 +111,11 @@ body,
     font-size: 13px;
 }
 
-#bufferinfo i{
-    font-size:13px;
+#bufferinfo i {
+    font-size: 13px;
 }
 
-#buffer button{
+#buffer button {
     width: 45%;
     background-color: #0074D9;
     color: #FFF;
@@ -189,7 +189,7 @@ body,
     margin: -5px auto 0px;
 }
 
-#measure button{
+#measure button {
     width: 45%;
     background-color: #0074D9;
     color: #FFF;
@@ -199,4 +199,10 @@ body,
 #measure h5 {
     font-size: 12px;
     margin-top: 2em;
+}
+
+#measureIcon {
+    width: 70%;
+    padding: 1px;
+    margin-top: 3px;
 }
