@@ -39,14 +39,14 @@
             <ul role="tablist" class="list--inline">
                 <li><a href="#basemap" role="tab"><i class="fa fa-map"></i></a></li>
                 <li><a href="#layers" role="tab"><i class="fa fa-bars"></i></a></li>
-                <li><a href="#measure" role="tab"><i class="fa fa-calculator"></i></a></li>
+                <li><a href="#measure" role="tab"><img id="measureIcon" src="img/rulers.png"></a></li>
                 <li><a href="#buffer" role="tab"><i class="fa fa-bullseye"></i></a></li>
                 <li><a href="#report" role="tab"><i class="fa fa-file-text"></i></a></li>
             </ul>
         </div>
         <!-- Tab panes -->
         <div class="sidebar-content">
-            <div class="sidebar-pane" id="basemap">
+             <div class="sidebar-pane" id="basemap">
                 <h1 class="sidebar-header">Basemaps<div class="sidebar-close"></div></h1>
                 <form id="basemapForm">
                     <div class="radio">
@@ -62,6 +62,21 @@
                     <div class="radio">
                         <label>
                             <input type="radio" name="basemaps" value="topo" autocomplete="off" /> OpenTopo Map
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="basemaps" value="esri-topo" autocomplete="off" /> Esri Topo Map
+                        </label>
+                    </div>
+                     <div class="radio">
+                        <label>
+                            <input type="radio" name="basemaps" value="esri-imagery" autocomplete="off" /> Esri Imagery
+                        </label>
+                    </div>                                       
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="basemaps" value="thunder-outdoors" autocomplete="off" /> Thunder Forest Outdoors
                         </label>
                     </div>
                 </form>
