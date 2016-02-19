@@ -206,3 +206,16 @@ body,
     padding: 1px;
     margin-top: 3px;
 }
+
+#roadsOp_lbl,#boundsOp_lbl, #faciOp_lbl,#coastOp_lbl{
+    padding-left:5px;
+}
+
+#resetOp{
+    margin-top:8px;
+    width:40%;
+}
+
+input[type="range"] {
+    width: 43%;
+}
