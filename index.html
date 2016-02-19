@@ -84,21 +84,46 @@
             <div class="sidebar-pane" id="layers">
                 <h1 class="sidebar-header">Layers<div class="sidebar-close"></div></h1>
                 <form id="layerForm">
+                
+                    <button id="resetOp" type="button" class="btn btn-primary btn-xs">Reset Opacity</button>
+
                     <div class="checkbox">
                         <label>
-                            <input id='roads' type="checkbox" name="layers" value="roads" disabled>Port Roads</label>
+                            <input id='roads' type="checkbox" name="layers" value="roads" disabled><b>Port Roads:</b>
+                        </label>
+                            <span><label class="rangeLabels" id="roadsOp_lbl">0.5</label></span>  
+                            
+                            <input class="opacity_slider" id="roadsOp" type="range" min="0" max="1.0" step="0.1" value="0.5"/>
+
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input id='boundary' type="checkbox" name="layers" value="boundary" disabled>Port Boundaries</label>
+                            <input id='boundary' type="checkbox" name="layers" value="boundary" disabled>
+                            <b>Boundaries:</b>
+                        </label>
+                            <span><label class="rangeLabels" id="boundsOp_lbl">0.5</label></span>  
+
+                            <input class="opacity_slider" id="boundsOp" type="range" min="0" max="1.0" step="0.1" value="0.5"/>
+
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input id='coastline' type="checkbox" name="layers" value="coastline" disabled>Port Coastline</label>
+                            <input id='coastline' type="checkbox" name="layers" value="coastline" disabled>
+                            <b>Coastline:</b>
+                        </label>
+                            <span><label class="rangeLabels" id="coastOp_lbl">0.5</label></span>  
+
+                            <input class="opacity_slider" id="coastOp" type="range" min="0" max="1.0" step="0.1" value="0.5"/> 
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input id='facilities' type="checkbox" name="layers" value="facilities" disabled>Port Facilities</label>
+                            <input id='facilities' type="checkbox" name="layers" value="facilities" disabled>
+                            <b>Facilities:</b>
+                        </label>
+
+                            <span><label class="rangeLabels" id="faciOp_lbl">0.5</label></span>
+
+                            <input class="opacity_slider" id="faciOp" type="range" min="0" max="1.0" step="0.1" value="0.5"/> 
                     </div>
                 </form>
             </div>
